@@ -1,0 +1,60 @@
+<!-- Welcome Message -->
+<div class="welcome-container">
+    <su-survey-introduction></su-survey-introduction>
+</div>
+
+<br>
+
+<!-- Survey Form -->
+<form class="survey-form" method="post" [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+    <h1 class="survey-form-title"><i class="far fa-list-alt"></i>Survey Form</h1>
+
+    <div class="fields">
+        <p>Enter your name: </p>
+        <input type="text" #name formControlName="namee" pattern="[a-zA-Z][a-zA-Z ]+"
+            [ngClass]="{'is-invalid' : submitted && surveyForm.controls.namee.errors}" style="margin-bottom: 1px;">
+        <div *ngIf="submitted && surveyForm.controls.namee.errors">
+            <div *ngIf="submitted && surveyForm.controls.namee.errors.required">
+                <span class="error-message">User name is required.</span>
+            </div>
+            <div *ngIf="submitted && surveyForm.controls.namee.errors.pattern">
+                <span class="error-message">User name must contain only letters.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-content current" data-step="1">
+        <div class="fields">
+            <p>How would you rate your experience with us?</p>
+            <div class="rating">
+                <input type="radio" name="rating" id="radio1" value="Very Unsatisfied">
+                <label for="radio1">1</label>
+                <input type="radio" name="rating" id="radio2" value="Unsatisfied">
+                <label for="radio2">2</label>
+                <input type="radio" name="rating" id="radio3" value="Neutral">
+                <label for="radio3">3</label>
+                <input type="radio" name="rating" id="radio4" value="Satisfied">
+                <label for="radio4">4</label>
+                <input type="radio" name="rating" id="radio5" value="Very Satisfied">
+                <label for="radio5">5</label>
+            </div>
+            <div class="rating-footer">
+                <span>Very Unsatisfied</span>
+                <span>Very Satisfied</span>
+            </div>
+
+            <p>What suggestions can you give us to improve our service?</p>
+            <textarea rows="4" cols="50" placeholder="Enter your suggestions here..." formControlName="textBox"
+                [ngClass]="{'is-invalid' : submitted && surveyForm.controls.textBox.errors}"></textarea>
+            <div *ngIf="submitted && surveyForm.controls.namee.errors">
+                <div *ngIf="submitted && surveyForm.controls.namee.errors.required">
+                    <span class="error-message">Please describe your experience in the textbox above.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button href="#" class="btn" (click)="getInputValue(name.value);">Submit Feedback</button>
+        </div>
+    </div>
+</form>

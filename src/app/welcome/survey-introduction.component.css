@@ -1,0 +1,21 @@
+.welcome-title {
+    font-size: 20px;
+    font-weight: 600;
+    background-color: white;
+    color: #6699CC;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-bottom: -1%;
+    padding: 5px !important;
+}
+
+.intro-text {
+    background-color: white;
+    text-align: center;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #8e939b;
+    padding: 20px !important;
+    margin: 0;
+}
