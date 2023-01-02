@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { SurveyIntroductionComponent } from './welcome/survey-introduction.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SurveyIntroductionComponent } from './welcome/survey-introduction.compo
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
 
   providers: [],
